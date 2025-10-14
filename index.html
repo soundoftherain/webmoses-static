@@ -1,140 +1,38 @@
-<!doctype html>
-<html lang="en" class="dark">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WebMoses — build create earn.</title>
+  <title>My Site</title>
   <link rel="stylesheet" href="global.css">
-  <meta name="theme-color" content="#0ea5ff">
-  <link rel="icon" href="favicon.ico">
 </head>
-<body class="bg-background text-foreground">
-
-  <!-- Header -->
-  <header class="sticky top-0 z-40 border-b border-white/10 bg-background/70 backdrop-blur-xl">
-    <div class="container flex h-16 items-center justify-between">
-      <a href="index.html" class="group inline-flex items-center gap-3">
-        <div class="h-8 w-8 rounded-lg bg-gradient-to-tr from-primary to-gold/90 glow"></div>
-        <span class="text-lg font-semibold tracking-wide">WebMoses</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-        <a href="#how" class="hover:text-foreground transition-colors">How it works</a>
-        <a href="#examples" class="hover:text-foreground transition-colors">Example projects</a>
-        <a href="#footer" class="hover:text-foreground transition-colors">Contact</a>
+<body>
+  <header>
+    <div class="container">
+      <h1>My Site</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="founders.html">Founders</a>
       </nav>
-      <div class="flex items-center gap-3">
-        <a href="#" class="inline-block rounded-md border border-white/10 px-4 py-2 hover:bg-white/5">Connect Wallet</a>
-      </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="relative overflow-hidden">
-    <div class="pointer-events-none absolute -inset-40 opacity-40 blur-3xl">
-      <div class="absolute left-1/2 top-10 h-96 w-[40rem] -translate-x-1/2 rounded-full bg-primary/30"></div>
-      <div class="absolute left-[10%] top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-[hsl(var(--gold))]/25"></div>
-    </div>
-    <div class="container relative z-10 py-24 md:py-36 text-center">
-      <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-muted-foreground">
-        Web3 for creators
-      </span>
-      <h1 class="mt-6 text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight">
-        <span class="text-white">build</span>
-        <span class="text-primary"> create</span>
-        <span class="text-[hsl(var(--gold))]"> earn.</span>
-      </h1>
-      <p class="mx-auto mt-6 max-w-2xl text-base md:text-lg text-muted-foreground">
-        WebMoses tokenizes creative projects so contributors earn ETH or project tokens for completed work. Launch ideas. Reward results.
-      </p>
-      <div class="mt-10 flex items-center justify-center gap-3">
-        <a href="#" class="inline-block rounded-md border border-white/10 px-4 py-2 hover:bg-white/5">Connect Wallet</a>
-        <a href="#how" class="px-4 py-2 rounded-md border border-white/10 hover:border-white/20 text-sm text-foreground/90">How it works</a>
-      </div>
-      <div class="mt-16 grid grid-cols-3 gap-3 mx-auto max-w-md opacity-80">
-        <div class="h-[2px] bg-gradient-to-r from-transparent via-primary/70 to-transparent"></div>
-        <div class="h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-        <div class="h-[2px] bg-gradient-to-r from-transparent via-[hsl(var(--gold))]/70 to-transparent"></div>
-      </div>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <img src="assets/placeholder.svg" alt="Placeholder" class="hero-image">
+      <h2>Welcome to Our Platform</h2>
+      <p>We’re building a decentralized, community-powered network. Join us on our journey!</p>
+      <a href="#about" class="btn">Learn More</a>
+    </section>
 
-  <!-- Upcoming Projects -->
-  <section class="container py-12">
-    <div class="flex items-center justify-between">
-      <div>
-        <h2 class="text-2xl font-semibold">Upcoming projects</h2>
-        <p class="mt-2 text-muted-foreground">
-          Curated projects coming to WebMoses — tokenized, community-driven, and creator-first.
-        </p>
-      </div>
-      <a href="founders.html" class="text-sm px-4 py-2 rounded-md border border-white/10 hover:bg-white/5">Founders</a>
-    </div>
-    <div class="mt-8 grid gap-6 md:grid-cols-3">
-      <article class="rounded-2xl glass p-6">
-        <h3 class="text-lg font-semibold">BirdWhistle.nft</h3>
-        <p class="mt-2 text-sm text-muted-foreground">
-          An NFT platform built for artists and musicians — mint, share, and collaborate.
-        </p>
-        <div class="mt-4 flex items-center gap-3 text-xs text-muted-foreground">
-          <span class="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-1">NFT • Music • Art</span>
-          <span class="ml-auto">Launching Q2</span>
-        </div>
-      </article>
-    </div>
-  </section>
+    <section id="about" class="content-section">
+      <h2>About Us</h2>
+      <p>Our mission is to create opportunities for real work to be recognized and rewarded on-chain. Everything you see here is designed to empower contributors and builders.</p>
+    </section>
+  </main>
 
-  <!-- How It Works -->
-  <section id="how" class="container py-16 md:py-24">
-    <h2 class="text-2xl md:text-3xl font-semibold">How it works</h2>
-    <p class="mt-2 text-muted-foreground max-w-2xl">
-      Launch, contribute, and earn with transparent, milestone-based rewards.
-    </p>
-    <div class="mt-10 grid gap-6 md:grid-cols-3">
-
-      <!-- Step 1 -->
-      <div class="group relative rounded-2xl glass p-6">
-        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-[hsl(var(--gold))]/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div class="relative z-10 flex items-start gap-4">
-          <div class="shrink-0 rounded-xl bg-white/5 p-3 glow">
-            <svg viewBox="0 0 24 24" class="h-6 w-6 text-primary">
-              <path fill="currentColor" d="M4 7h16v2H4zM4 11h16v2H4zM4 15h10v2H4z"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-lg font-semibold">Create project</h3>
-            <p class="mt-1 text-sm text-muted-foreground">
-              Tokenize your idea with on-chain project tokens or ETH-based rewards.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="group relative rounded-2xl glass p-6">
-        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-[hsl(var(--gold))]/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div class="relative z-10 flex items-start gap-4">
-          <div class="shrink-0 rounded-xl bg-white/5 p-3 glow">
-            <svg viewBox="0 0 24 24" class="h-6 w-6 text-[hsl(var(--gold))]">
-              <path fill="currentColor" d="M12 2l3 7h7l-5.5 4 2.5 7-7-4.5L5 20l2.5-7L2 9h7z"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-lg font-semibold">Contribute work</h3>
-            <p class="mt-1 text-sm text-muted-foreground">
-              Publish tasks. Contributors submit work. Curate with community.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="group relative rounded-2xl glass p-6">
-        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-[hsl(var(--gold))]/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div class="relative z-10 flex items-start gap-4">
-          <div class="shrink-0 rounded-xl bg-white/5 p-3 glow">
-            <svg viewBox="0 0 24 24" class="h-6 w-6 text-primary">
-              <path fill="currentColor" d="M12 1l8 13-8 9-8-9 8-13zm0 6l-3 5 3 2 3-2-3-5z"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-lg font
+  <footer>
+    <p>&copy; 2025 My Site. All rights reserved.</p>
+  </footer>
+</body>
+</html>
