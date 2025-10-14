@@ -3,36 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Site</title>
-  <link rel="stylesheet" href="global.css">
+  <title>WebMoses — Decentralized Work</title>
+  <link rel="icon" href="favicon.ico">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f9f9f9;
+      color: #111;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #0ea5ff;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+      line-height: 1.6;
+    }
+
+    a.btn {
+      display: inline-block;
+      padding: 14px 30px;
+      border: 2px solid #0ea5ff;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #0ea5ff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a.btn:hover {
+      background: #0ea5ff;
+      color: #fff;
+    }
+
+    .founder {
+      margin-top: 50px;
+      font-style: italic;
+      color: #333;
+      max-width: 500px;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>My Site</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="founders.html">Founders</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <img src="assets/placeholder.svg" alt="Placeholder" class="hero-image">
-      <h2>Welcome to Our Platform</h2>
-      <p>We’re building a decentralized, community-powered network. Join us on our journey!</p>
-      <a href="#about" class="btn">Learn More</a>
-    </section>
+  <h1>WebMoses</h1>
+  <p>Decentralized work for creators. Tokenized rewards, proof-of-quality, and community governance help contributors earn and scale projects transparently.</p>
+  <a class="btn" href="mailto:hello@webmoses.org">Connect with the Team</a>
 
-    <section id="about" class="content-section">
-      <h2>About Us</h2>
-      <p>Our mission is to create opportunities for real work to be recognized and rewarded on-chain. Everything you see here is designed to empower contributors and builders.</p>
-    </section>
-  </main>
+  <div class="founder">
+    <p>“I envision a platform where quality work is recognized and rewarded transparently.” — Moses Builder, Founder</p>
+  </div>
 
   <footer>
-    <p>&copy; 2025 My Site. All rights reserved.</p>
+    &copy; 2025 WebMoses
   </footer>
+
 </body>
 </html>
