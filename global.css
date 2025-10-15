@@ -112,3 +112,30 @@ body {
 .footer .social-links a:hover {
   text-decoration: underline;
 }
+/* Glass-style cards for roadmap, founders, or highlight sections */
+.glass-card {
+  @apply bg-black/30 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12 mt-12;
+  color: #ddd; /* light text for readability */
+}
+
+.glass-card h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #0ea5ff; /* highlight title in electric blue */
+}
+
+.glass-card ol {
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}
+
+.glass-card ol li {
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.glass-card ol li::marker {
+  color: #0ea5ff; /* numbered bullets in accent color */
+  font-weight: bold;
+}
