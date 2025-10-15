@@ -6,61 +6,98 @@
   <title>WebMoses — Decentralized Work</title>
   <link rel="icon" href="favicon.ico">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f9f9f9;
-      color: #111;
+      font-family: 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
-      justify-content: center;
       align-items: center;
-      text-align: center;
+      justify-content: flex-start;
       padding: 20px;
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(14,165,255,0.15), transparent 60%),
+                  radial-gradient(800px 400px at 110% 10%, rgba(255,215,0,0.12), transparent 60%),
+                  radial-gradient(1000px 500px at 50% 120%, rgba(14,165,255,0.08), transparent 60%);
+      background-attachment: fixed;
+      color: #fff;
+      text-align: center;
     }
 
     h1 {
-      font-size: 3rem;
-      color: #0ea5ff;
+      font-size: 4rem;
+      font-weight: 700;
       margin-bottom: 20px;
+      color: #0ea5ff;
+      text-shadow: 0 0 15px rgba(14,165,255,0.7);
     }
 
     p {
       font-size: 1.25rem;
+      line-height: 1.6;
       max-width: 600px;
       margin: 0 auto 30px auto;
-      line-height: 1.6;
     }
 
     a.btn {
       display: inline-block;
       padding: 14px 30px;
-      border: 2px solid #0ea5ff;
       border-radius: 8px;
-      font-weight: bold;
-      color: #0ea5ff;
+      font-weight: 600;
+      background: linear-gradient(90deg, #0ea5ff, #3b82f6);
+      color: #fff;
       text-decoration: none;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(14,165,255,0.3);
+      margin-top: 15px;
     }
 
     a.btn:hover {
-      background: #0ea5ff;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 25px rgba(14,165,255,0.45);
+    }
+
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,0.35);
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 2rem;
+      max-width: 600px;
+      margin: 30px auto;
+      text-align: left;
+    }
+
+    .glass-card h2, .glass-card h3 {
       color: #fff;
+      margin-bottom: 0.5rem;
     }
 
     .founder {
-      margin-top: 50px;
       font-style: italic;
-      color: #333;
-      max-width: 500px;
+      color: #ddd;
+      margin-top: 30px;
+      text-align: center;
     }
 
     footer {
       margin-top: 60px;
       font-size: 0.9rem;
-      color: #666;
+      color: #aaa;
     }
+
+    /* Juicebox embed container */
+    .juicebox-container {
+      margin: 30px auto;
+      max-width: 600px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 10px 25px rgba(14,165,255,0.2);
+    }
+
   </style>
 </head>
 <body>
@@ -68,6 +105,24 @@
   <h1>WebMoses</h1>
   <p>Decentralized work for creators. Tokenized rewards, proof-of-quality, and community governance help contributors earn and scale projects transparently.</p>
   <a class="btn" href="mailto:hello@webmoses.org">Connect with the Team</a>
+
+  <div class="juicebox-container">
+    <!-- Juicebox embed iframe -->
+    <iframe src="https://juicebox.money/v5/base:34" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <div class="glass-card">
+    <h2>Moses Builder — Founder</h2>
+    <p>Hello, I’m Moses Builder. I envision a platform that changes how programmers view work — a place where projects are tokenized, contributors are rewarded for quality, and governance emerges through participation.</p>
+
+    <h3>Mission</h3>
+    <p>Create a decentralized workflow where project stakes, proof-of-work, and proof-of-quality combine to surface top contributors and fairly distribute rewards in ETH or project tokens.</p>
+
+    <h3>Join</h3>
+    <p>If you’re interested in contributing or investing, connect your wallet and reach out. We’ll onboard early contributors and form the DAO.</p>
+
+    <a class="btn" href="mailto:webmoseslabs@gmail.com">Email the Team</a>
+  </div>
 
   <div class="founder">
     <p>“I envision a platform where quality work is recognized and rewarded transparently.” — Moses Builder, Founder</p>
