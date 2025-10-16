@@ -1,199 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WebMoses — Decentralized Work for Creators</title>
-  <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" href="global.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebMoses — Decentralized Work Protocol</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="global.css" />
+    <meta
+      name="description"
+      content="WebMoses is a decentralized work network rewarding proof-of-quality, not speculation. Built for creators and builders."
+    />
+  </head>
+  <body class="dark">
+    <header class="glass flex justify-between items-center px-8 py-4">
+      <h1 class="text-2xl font-bold text-primary">WebMoses</h1>
+      <nav>
+        <a href="#mission" class="hover:text-accent mx-3">Mission</a>
+        <a href="#how" class="hover:text-accent mx-3">How It Works</a>
+        <a href="/founders.html" class="hover:text-accent mx-3">Founders</a>
+      </nav>
+    </header>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
-      background: radial-gradient(circle at 10% -10%, rgba(14,165,255,0.08), transparent 60%),
-                  radial-gradient(circle at 110% 20%, rgba(255,215,77,0.07), transparent 60%),
-                  #05070a;
-      color: #eaeaea;
-      text-align: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-    }
+    <main class="container mx-auto text-center py-24 px-6">
+      <!-- HERO -->
+      <section id="hero">
+        <h2 class="text-5xl font-bold mb-6 text-accent">
+          Build. Earn. Govern.
+        </h2>
+        <p class="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+          WebMoses turns projects into tokenized work ecosystems — where every
+          contributor is rewarded transparently by proof-of-quality and DAO
+          governance.
+        </p>
+        <a
+          href="https://juicebox.money/v5/base:34"
+          class="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90"
+          target="_blank"
+          rel="noopener noreferrer"
+          >🚀 Fund the Campaign</a
+        >
+      </section>
 
-    header {
-      max-width: 800px;
-      margin: 0 auto 60px;
-    }
+      <!-- MISSION -->
+      <section id="mission" class="mt-24">
+        <h3 class="text-3xl font-semibold mb-4">Mission</h3>
+        <p class="max-w-xl mx-auto text-muted-foreground">
+          Our mission is to decentralize opportunity. By blending
+          proof-of-work and proof-of-quality, WebMoses ensures every builder,
+          artist, and thinker can earn and grow through open collaboration.
+        </p>
+      </section>
 
-    h1 {
-      font-size: 3.5rem;
-      margin-bottom: 16px;
-      color: #0ea5ff;
-      text-shadow: 0 0 20px rgba(14,165,255,0.3);
-    }
+      <!-- HOW IT WORKS -->
+      <section id="how" class="mt-24 text-left max-w-3xl mx-auto">
+        <h3 class="text-3xl font-semibold mb-8 text-center">
+          How It Works
+        </h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="glass p-6 rounded-xl">
+            <h4 class="font-bold text-lg mb-2">1. Post a Project</h4>
+            <p class="text-muted-foreground">
+              Creators list open tasks and define tokenized reward structures.
+            </p>
+          </div>
+          <div class="glass p-6 rounded-xl">
+            <h4 class="font-bold text-lg mb-2">2. Build & Earn</h4>
+            <p class="text-muted-foreground">
+              Contributors complete tasks, get verified on-chain, and earn
+              rewards.
+            </p>
+          </div>
+          <div class="glass p-6 rounded-xl">
+            <h4 class="font-bold text-lg mb-2">3. Govern Together</h4>
+            <p class="text-muted-foreground">
+              Ownership is shared via DAO — decisions, rewards, and growth.
+            </p>
+          </div>
+        </div>
+      </section>
 
-    p.lead {
-      font-size: 1.2rem;
-      color: #cfcfcf;
-      max-width: 650px;
-      margin: 0 auto 30px;
-      line-height: 1.6;
-    }
+      <!-- FOUNDER QUOTE -->
+      <section id="founder" class="mt-24 glass p-10 rounded-2xl max-w-3xl mx-auto">
+        <h3 class="text-2xl font-semibold mb-2">Moses Builder — Founder</h3>
+        <p class="text-muted-foreground">
+          “I envision a future where real builders define value — not markets.
+          Every contribution should earn recognition, reputation, and reward.”
+        </p>
+      </section>
+    </main>
 
-    a.btn {
-      display: inline-block;
-      padding: 14px 30px;
-      border: 2px solid #0ea5ff;
-      border-radius: 10px;
-      font-weight: 600;
-      color: #0ea5ff;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    a.btn:hover {
-      background: #0ea5ff;
-      color: #fff;
-      box-shadow: 0 0 20px rgba(14,165,255,0.5);
-    }
-
-    section {
-      width: 100%;
-      max-width: 900px;
-      margin: 60px auto;
-      text-align: left;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 40px;
-      backdrop-filter: blur(10px);
-    }
-
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      color: #FFD54F;
-    }
-
-    section p, li {
-      color: #bbb;
-      line-height: 1.7;
-    }
-
-    ul {
-      margin: 10px 0 0 20px;
-    }
-
-    .founder-quote {
-      margin-top: 40px;
-      font-style: italic;
-      color: #ccc;
-    }
-
-    footer {
-      margin-top: 80px;
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    .glass-card {
-      margin-top: 40px;
-    }
-
-    .project-card {
-      background: rgba(255,255,255,0.05);
-      border-radius: 14px;
-      padding: 20px;
-      margin-bottom: 16px;
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: 0.3s;
-    }
-
-    .project-card:hover {
-      background: rgba(255,255,255,0.08);
-      transform: translateY(-3px);
-    }
-
-    .project-card h3 {
-      margin: 0;
-      color: #0ea5ff;
-    }
-
-    .project-card p {
-      color: #bbb;
-      margin-top: 8px;
-    }
-
-    .tags {
-      font-size: 0.85rem;
-      color: #aaa;
-      margin-top: 10px;
-    }
-
-    .gold {
-      color: #FFD54F;
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>WebMoses</h1>
-    <p class="lead">
-      Decentralized work for creators — tokenized rewards, proof-of-quality, and
-      community governance to scale opportunity transparently.
-    </p>
-    <a class="btn" href="https://juicebox.money/v5/base:34" target="_blank">Fund the Campaign</a>
-  </header>
-
-  <section>
-    <h2>Founder Vision</h2>
-    <p>
-      WebMoses redefines how programmers, artists, and builders collaborate.
-      Projects are tokenized; contributors are rewarded by quality and proof-of-work.
-      Governance emerges organically through participation — not hierarchy.
-    </p>
-
-    <div class="founder-quote">
-      “I envision a platform where quality work is recognized and rewarded
-      transparently.” — <b>Moses Builder</b>, Founder
-    </div>
-  </section>
-
-  <section>
-    <h2>Quick Roadmap</h2>
-    <ol>
-      <li>1. Onboard core contributors and launch pilot projects (2–4 weeks)</li>
-      <li>2. Deploy tokenized project contracts and reward flows (4–8 weeks)</li>
-      <li>3. Audit, iterate, and launch DAO governance (8–16 weeks)</li>
-    </ol>
-  </section>
-
-  <section class="glass-card">
-    <h2>Upcoming Projects</h2>
-
-    <div class="project-card">
-      <h3>BirdWhistle.nft</h3>
-      <p>
-        An NFT platform for artists and musicians — mint, share, and collaborate.
+    <footer class="mt-24 text-center py-8 border-t border-white/10">
+      <p class="text-muted-foreground mb-2">
+        &copy; 2025 WebMoses — Built for Builders
       </p>
-      <div class="tags">NFT • Music • Art — <span class="gold">Launching Q2</span></div>
-    </div>
-
-    <div class="project-card">
-      <h3 class="gold">ProofHub DAO</h3>
-      <p>
-        Decentralized contributor verification and automated reward distribution.
-      </p>
-      <div class="tags">DAO • WorkProof • Governance — <span style="color:#0ea5ff;">In Development</span></div>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 WebMoses — Built for decentralized opportunity
-  </footer>
-</body>
+      <a
+        href="mailto:webmoseslabs@gmail.com"
+        class="text-sm hover:text-accent"
+        >Email the Team</a
+      >
+    </footer>
+  </body>
 </html>
