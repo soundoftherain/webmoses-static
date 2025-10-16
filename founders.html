@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Founders — WebMoses</title>
-  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico" />
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
 
     body {
       margin: 0;
       font-family: 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
-      background-color: #0e0f12;
+      background: radial-gradient(circle at top left, #050608, #0e0f12 70%);
       color: #fff;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     a { text-decoration: none; }
@@ -23,16 +24,20 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem 2rem;
-      background: rgba(0,0,0,0.3);
+      background: rgba(0,0,0,0.25);
+      backdrop-filter: blur(8px);
       position: sticky;
       top: 0;
       z-index: 10;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     header a.logo {
       font-weight: 700;
-      font-size: 1.5rem;
-      color: #0ea5ff;
+      font-size: 1.6rem;
+      background: linear-gradient(90deg, #0ea5ff, #38bdf8, #14b8a6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     header nav a {
@@ -45,17 +50,33 @@
 
     header nav a:hover {
       background: rgba(14,165,255,0.1);
-      color: #0ea5ff;
+      color: #38bdf8;
     }
 
     section {
       padding: 4rem 2rem;
       max-width: 900px;
       margin: auto;
+      position: relative;
+      z-index: 2;
     }
 
-    section h2 { font-size: 2rem; font-weight: 600; margin-bottom: 1rem; color: #0ea5ff; }
-    section h3 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; color: #fff; }
+    section h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #0ea5ff, #38bdf8, #facc15);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+    }
+
+    section h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      color: #fff;
+    }
+
     section p { color: #ccc; margin-bottom: 1rem; }
     ul { margin-left: 1.5rem; margin-bottom: 1rem; }
     li { margin-bottom: 0.5rem; }
@@ -65,34 +86,95 @@
       padding: 2rem;
       border-radius: 1rem;
       backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08);
       margin-top: 2rem;
+      box-shadow: 0 0 40px rgba(14,165,255,0.05);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 50px rgba(14,165,255,0.15);
+      transition: all 0.3s ease;
     }
 
     a.btn {
       display: inline-block;
       padding: 1rem 2rem;
       border-radius: 8px;
-      background: #0ea5ff;
+      background: linear-gradient(90deg, #0ea5ff, #14b8a6);
       color: #fff;
-      font-weight: bold;
+      font-weight: 600;
+      text-align: center;
       transition: 0.3s;
+      box-shadow: 0 0 15px rgba(14,165,255,0.25);
     }
 
-    a.btn:hover { background: #fff; color: #0ea5ff; }
+    a.btn:hover {
+      background: linear-gradient(90deg, #38bdf8, #22d3ee);
+      transform: translateY(-3px);
+      box-shadow: 0 0 25px rgba(14,165,255,0.4);
+    }
 
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
-      color: #666;
-      background: rgba(0,0,0,0.2);
-      margin-top: 4rem;
+      color: #888;
+      background: rgba(0,0,0,0.25);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      margin-top: 5rem;
+      position: relative;
+      z-index: 2;
     }
 
+    /* Background glow orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.4;
+      z-index: 0;
+      animation: float 12s ease-in-out infinite alternate;
+    }
+    .orb.blue { width: 400px; height: 400px; top: -60px; left: -120px; background: rgba(14,165,255,0.35); }
+    .orb.gold { width: 300px; height: 300px; bottom: -80px; right: -60px; background: rgba(250,204,21,0.2); }
+
+    /* Accent line animation under titles */
+    h2::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 3px;
+      margin-top: 8px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #0ea5ff, #38bdf8, #14b8a6);
+      animation: pulse 3s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; transform: scaleX(0.8); }
+      100% { opacity: 1; transform: scaleX(1); }
+    }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(25px, -30px) scale(1.05); }
+      100% { transform: translate(0, 0) scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      header { flex-direction: column; align-items: flex-start; }
+      section h2 { font-size: 1.8rem; }
+    }
   </style>
 </head>
 <body>
-
   <header>
     <a href="index.html" class="logo">WebMoses</a>
     <nav>
@@ -100,6 +182,9 @@
       <a href="mailto:webmoseslabs@gmail.com">Contact</a>
     </nav>
   </header>
+
+  <div class="orb blue"></div>
+  <div class="orb gold"></div>
 
   <section>
     <h2>Founders</h2>
@@ -126,9 +211,9 @@
     <section>
       <h2>Quick Roadmap</h2>
       <ol style="color:#ccc;">
-        <li>1. Onboard core contributors and launch pilot projects (2-4 weeks)</li>
-        <li>2. Deploy tokenized project contracts and reward flows (4-8 weeks)</li>
-        <li>3. Audit, iterate, and launch DAO governance (8-16 weeks)</li>
+        <li>1. Onboard core contributors and launch pilot projects (2–4 weeks)</li>
+        <li>2. Deploy tokenized project contracts and reward flows (4–8 weeks)</li>
+        <li>3. Audit, iterate, and launch DAO governance (8–16 weeks)</li>
       </ol>
     </section>
   </section>
@@ -136,6 +221,5 @@
   <footer>
     &copy; 2025 WebMoses — Decentralized Work
   </footer>
-
 </body>
 </html>
