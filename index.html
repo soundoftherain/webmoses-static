@@ -1,116 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WebMoses — Decentralized Work Protocol</title>
-    <link rel="icon" href="favicon.ico" />
-    <link rel="stylesheet" href="global.css" />
-    <meta
-      name="description"
-      content="WebMoses is a decentralized work network rewarding proof-of-quality, not speculation. Built for creators and builders."
-    />
-  </head>
-  <body class="dark">
-    <header class="glass flex justify-between items-center px-8 py-4">
-      <h1 class="text-2xl font-bold text-primary">WebMoses</h1>
-      <nav>
-        <a href="#mission" class="hover:text-accent mx-3">Mission</a>
-        <a href="#how" class="hover:text-accent mx-3">How It Works</a>
-        <a href="/founders.html" class="hover:text-accent mx-3">Founders</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebMoses — Decentralized Work</title>
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
 
-    <main class="container mx-auto text-center py-24 px-6">
-      <!-- HERO -->
-      <section id="hero">
-        <h2 class="text-5xl font-bold mb-6 text-accent">
-          Build. Earn. Govern.
-        </h2>
-        <p class="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-          WebMoses turns projects into tokenized work ecosystems — where every
-          contributor is rewarded transparently by proof-of-quality and DAO
-          governance.
-        </p>
-        <a
-         <div class="flex justify-center gap-4 flex-wrap">
-  <a
-    href="https://juicebox.money/v5/base:34"
-    class="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    🚀 Fund the Campaign
-  </a>
-  <a
-    href="founders.html"
-    class="inline-block border border-white/10 px-6 py-3 rounded-lg font-semibold text-muted-foreground hover:bg-white/5"
-  >
-    Meet the Founders
-  </a>
-</div>
+    :root {
+      --primary: #0ea5ff;
+      --accent: #facc15;
+      --background: #0f172a;
+      --foreground: #f8fafc;
+      --card-bg: rgba(255,255,255,0.05);
+      --card-border: rgba(255,255,255,0.1);
+    }
 
-          >🚀 Fund the Campaign</a
-        >
-      </section>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-      <!-- MISSION -->
-      <section id="mission" class="mt-24">
-        <h3 class="text-3xl font-semibold mb-4">Mission</h3>
-        <p class="max-w-xl mx-auto text-muted-foreground">
-          Our mission is to decentralize opportunity. By blending
-          proof-of-work and proof-of-quality, WebMoses ensures every builder,
-          artist, and thinker can earn and grow through open collaboration.
-        </p>
-      </section>
+    body {
+      font-family: 'Space Grotesk', Arial, sans-serif;
+      background: var(--background);
+      color: var(--foreground);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-      <!-- HOW IT WORKS -->
-      <section id="how" class="mt-24 text-left max-w-3xl mx-auto">
-        <h3 class="text-3xl font-semibold mb-8 text-center">
-          How It Works
-        </h3>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="glass p-6 rounded-xl">
-            <h4 class="font-bold text-lg mb-2">1. Post a Project</h4>
-            <p class="text-muted-foreground">
-              Creators list open tasks and define tokenized reward structures.
-            </p>
-          </div>
-          <div class="glass p-6 rounded-xl">
-            <h4 class="font-bold text-lg mb-2">2. Build & Earn</h4>
-            <p class="text-muted-foreground">
-              Contributors complete tasks, get verified on-chain, and earn
-              rewards.
-            </p>
-          </div>
-          <div class="glass p-6 rounded-xl">
-            <h4 class="font-bold text-lg mb-2">3. Govern Together</h4>
-            <p class="text-muted-foreground">
-              Ownership is shared via DAO — decisions, rewards, and growth.
-            </p>
-          </div>
-        </div>
-      </section>
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      gap: 2rem;
+    }
 
-      <!-- FOUNDER QUOTE -->
-      <section id="founder" class="mt-24 glass p-10 rounded-2xl max-w-3xl mx-auto">
-        <h3 class="text-2xl font-semibold mb-2">Moses Builder — Founder</h3>
-        <p class="text-muted-foreground">
-          “I envision a future where real builders define value — not markets.
-          Every contribution should earn recognition, reputation, and reward.”
-        </p>
-      </section>
-    </main>
+    h1 {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
 
-    <footer class="mt-24 text-center py-8 border-t border-white/10">
-      <p class="text-muted-foreground mb-2">
-        &copy; 2025 WebMoses — Built for Builders
-      </p>
-      <a
-        href="mailto:webmoseslabs@gmail.com"
-        class="text-sm hover:text-accent"
-        >Email the Team</a
-      >
-    </footer>
-  </body>
+    p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    a.btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    a.btn:hover {
+      background: var(--primary);
+      color: var(--background);
+    }
+
+    .founder {
+      margin-top: 2rem;
+      font-style: italic;
+      color: #cbd5e1;
+      max-width: 500px;
+    }
+
+    section.card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 700px;
+      width: 100%;
+      text-align: left;
+    }
+
+    section.card h2, section.card h3 {
+      color: var(--primary);
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    section.card ul {
+      list-style: disc inside;
+      margin-top: 0.5rem;
+      color: #cbd5e1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    /* Quick gradient background flair */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -200px;
+      left: -200px;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+      opacity: 0.2;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -200px;
+      right: -200px;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+      opacity: 0.2;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>WebMoses</h1>
+    <p>Decentralized work for creators. Tokenized rewards, proof-of-quality, and community governance help contributors earn and scale projects transparently.</p>
+    <a class="btn" href="mailto:hello@webmoses.org">Connect with the Team</a>
+
+    <div class="founder">
+      <p>“I envision a platform where quality work is recognized and rewarded transparently.” — Moses Builder, Founder</p>
+    </div>
+
+    <section class="card">
+      <h2>Mission</h2>
+      <p>Create a decentralized workflow where project stakes, proof-of-work, and proof-of-quality combine to surface top contributors and fairly distribute rewards in ETH or project tokens.</p>
+
+      <h3>What We Need</h3>
+      <ul>
+        <li>Core contributors: Solidity devs, backend, frontend.</li>
+        <li>Early adopters and pilot projects to test reward flows.</li>
+        <li>Minimal funding to bootstrap audits and infrastructure.</li>
+      </ul>
+
+      <h3>Join</h3>
+      <p>If you’re interested in contributing or investing, connect your wallet and reach out. We’ll onboard early contributors and form the DAO.</p>
+
+      <a class="btn" href="mailto:webmoseslabs@gmail.com" style="margin-top: 1rem; display: inline-block;">Email the team</a>
+    </section>
+
+    <section class="card">
+      <h2>Quick Roadmap</h2>
+      <ul>
+        <li>1. Onboard core contributors and launch pilot projects (2-4 weeks)</li>
+        <li>2. Deploy tokenized project contracts and reward flows (4-8 weeks)</li>
+        <li>3. Audit, iterate, and launch DAO governance (8-16 weeks)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>&copy; 2025 WebMoses</footer>
+</body>
 </html>
