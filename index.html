@@ -5,97 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WebMoses — Decentralized Work</title>
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="global.css">
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
+
     body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
       margin: 0;
-      font-family: 'Space Grotesk', Inter, sans-serif;
-      background: #0f111a;
+      font-family: 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
+      background-color: #0e0f12;
       color: #fff;
-      text-align: center;
+      line-height: 1.6;
     }
+
+    a { text-decoration: none; }
 
     header {
-      padding: 2rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background: rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
-    h1 {
-      font-size: 3rem;
+    header a.logo {
+      font-weight: 700;
+      font-size: 1.5rem;
       color: #0ea5ff;
-      margin-bottom: 1rem;
     }
 
-    p.lead {
-      font-size: 1.25rem;
-      max-width: 600px;
-      margin: 0 auto 2rem auto;
-      line-height: 1.6;
-      color: #ccc;
-    }
-
-    a.btn {
-      display: inline-block;
-      padding: 0.75rem 2rem;
-      margin: 0.5rem;
-      border: 2px solid #0ea5ff;
-      border-radius: 8px;
-      font-weight: bold;
-      color: #0ea5ff;
-      text-decoration: none;
+    header nav a {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
       transition: 0.3s;
-    }
-
-    a.btn:hover {
-      background: #0ea5ff;
       color: #fff;
     }
 
-    section {
-      padding: 4rem 1rem;
+    header nav a:hover {
+      background: rgba(14,165,255,0.1);
+      color: #0ea5ff;
     }
+
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: radial-gradient(circle at 10% -10%, rgba(14,165,255,0.15), transparent 60%),
+                  radial-gradient(circle at 110% 10%, rgba(255,223,0,0.12), transparent 60%),
+                  radial-gradient(circle at 50% 120%, rgba(14,165,255,0.08), transparent 60%);
+    }
+
+    .hero h1 { font-size: 3rem; font-weight: 700; color: #0ea5ff; margin-bottom: 1rem; }
+    .hero h2 { font-size: 2rem; font-weight: 600; margin-bottom: 1rem; color: #fff; }
+    .hero p { max-width: 600px; font-size: 1.25rem; margin-bottom: 2rem; color: #ddd; }
+    .hero a.btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      background: #0ea5ff;
+      color: #fff;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .hero a.btn:hover { background: #fff; color: #0ea5ff; }
+
+    section { padding: 4rem 2rem; max-width: 1200px; margin: auto; }
+
+    section h2 { font-size: 2rem; font-weight: 600; margin-bottom: 1rem; }
+    section p { color: #ccc; margin-bottom: 2rem; }
 
     .projects {
       display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
 
-    .card {
+    .project-card {
       background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 1rem;
       padding: 1.5rem;
-      text-align: left;
+      border-radius: 1rem;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
     }
 
-    .card h3 {
-      margin: 0 0 0.5rem 0;
-      font-size: 1.25rem;
+    .project-card:hover {
+      background: rgba(14,165,255,0.1);
     }
 
-    .card p {
-      margin: 0.5rem 0;
-      font-size: 0.95rem;
-      color: #ccc;
-    }
+    .project-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: #0ea5ff; }
+    .project-card p { color: #ccc; font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .project-card span { font-size: 0.8rem; color: #aaa; }
 
     footer {
-      margin-top: auto;
-      padding: 2rem 1rem;
-      font-size: 0.85rem;
-      color: #888;
-      background: rgba(255,255,255,0.03);
-    }
-
-    a.founders-link {
-      display: inline-block;
-      margin-top: 1rem;
-      text-decoration: underline;
-      color: #0ea5ff;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+      background: rgba(0,0,0,0.2);
     }
 
   </style>
@@ -103,32 +115,45 @@
 <body>
 
   <header>
-    <h1>WebMoses</h1>
-    <p class="lead">Decentralized work for creators. Tokenized rewards, proof-of-quality, and community governance help contributors earn and scale projects transparently.</p>
-    <a class="btn" href="mailto:noahmoses@proton.me">Connect with the Team</a>
-    <br>
-    <a class="founders-link" href="founders.html">Meet the Founders</a>
+    <a href="index.html" class="logo">WebMoses</a>
+    <nav>
+      <a href="founders.html">Founders</a>
+      <a href="#projects">Projects</a>
+      <a href="mailto:webmoseslabs@gmail.com">Contact</a>
+    </nav>
   </header>
 
-  <section>
+  <section class="hero">
+    <h1>Web3 for creators</h1>
+    <h2>Build. Create. Earn.</h2>
+    <p>WebMoses tokenizes creative projects so contributors earn ETH or project tokens for completed work. Launch ideas. Reward results.</p>
+    <a href="founders.html" class="btn">Join the DAO</a>
+  </section>
+
+  <section id="projects">
     <h2>Upcoming Projects</h2>
-    <p class="lead">Curated projects coming to WebMoses — tokenized, community-driven, and creator-first.</p>
+    <p>Curated projects coming to WebMoses — tokenized, community-driven, and creator-first.</p>
     <div class="projects">
-      <div class="card">
+      <div class="project-card">
         <h3>BirdWhistle.nft</h3>
         <p>An NFT platform built for artists and musicians — mint, share, and collaborate.</p>
-        <p style="font-size:0.85rem; color:#aaa;">NFT • Music • Art | Launching Q2</p>
+        <span>NFT • Music • Art — Launching Q2</span>
       </div>
-      <div class="card">
-        <h3>Another Project</h3>
-        <p>Example project description goes here. Highlight why it’s exciting.</p>
-        <p style="font-size:0.85rem; color:#aaa;">Category • Tags | Launching Soon</p>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>Placeholder for your next exciting project description.</p>
+        <span>Web3 • Collaboration — Coming Soon</span>
+      </div>
+      <div class="project-card">
+        <h3>Project Three</h3>
+        <p>Another project for early adopters and contributors.</p>
+        <span>Tokenized • DAO — Coming Soon</span>
       </div>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 WebMoses | <a href="mailto:noahmoses@proton.me" style="color:#0ea5ff;">Contact</a>
+    &copy; 2025 WebMoses — Decentralized Work
   </footer>
 
 </body>
