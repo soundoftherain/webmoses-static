@@ -1,160 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WebMoses — Decentralized Work</title>
-  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico" />
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
 
-    body {
-      margin: 0;
-      font-family: 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
-      background-color: #0e0f12;
-      color: #fff;
-      line-height: 1.6;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    a { text-decoration: none; }
+    body {
+      font-family: 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
+      background: radial-gradient(circle at top left, #050608, #0e0f12 60%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 2rem;
-      background: rgba(0,0,0,0.3);
+      padding: 1rem 2rem;
+      background: rgba(0,0,0,0.25);
+      backdrop-filter: blur(8px);
       position: sticky;
       top: 0;
       z-index: 10;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
     header a.logo {
       font-weight: 700;
-      font-size: 1.5rem;
-      color: #0ea5ff;
+      font-size: 1.6rem;
+      background: linear-gradient(90deg, #0ea5ff, #38bdf8, #14b8a6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     header nav a {
       margin-left: 1rem;
       padding: 0.5rem 1rem;
       border-radius: 6px;
-      transition: 0.3s;
       color: #fff;
+      transition: 0.3s;
     }
-
     header nav a:hover {
       background: rgba(14,165,255,0.1);
-      color: #0ea5ff;
+      color: #38bdf8;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero {
-      min-height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
-      padding: 4rem 2rem;
-      background: radial-gradient(circle at 10% -10%, rgba(14,165,255,0.15), transparent 60%),
-                  radial-gradient(circle at 110% 10%, rgba(255,223,0,0.12), transparent 60%),
-                  radial-gradient(circle at 50% 120%, rgba(14,165,255,0.08), transparent 60%);
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero h1 { font-size: 3rem; font-weight: 700; color: #0ea5ff; margin-bottom: 1rem; }
-    .hero h2 { font-size: 2rem; font-weight: 600; margin-bottom: 1rem; color: #fff; }
-    .hero p { max-width: 600px; font-size: 1.25rem; margin-bottom: 2rem; color: #ddd; }
-    .hero a.btn {
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #0ea5ff, #38bdf8, #facc15);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      color: #cfd9e2;
+      max-width: 720px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.6;
+      animation: fadeInUp 1.3s ease forwards;
+    }
+
+    a.btn {
       display: inline-block;
       padding: 1rem 2rem;
-      border-radius: 8px;
-      background: #0ea5ff;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #0ea5ff, #14b8a6);
       color: #fff;
-      font-weight: bold;
-      transition: 0.3s;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(14,165,255,0.3);
+      transition: all 0.3s ease;
+      animation: fadeInUp 1.5s ease forwards;
     }
-    .hero a.btn:hover { background: #fff; color: #0ea5ff; }
-
-    section { padding: 4rem 2rem; max-width: 1200px; margin: auto; }
-
-    section h2 { font-size: 2rem; font-weight: 600; margin-bottom: 1rem; }
-    section p { color: #ccc; margin-bottom: 2rem; }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+    a.btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px rgba(14,165,255,0.6);
+      background: linear-gradient(90deg, #38bdf8, #22d3ee);
     }
 
-    .project-card {
-      background: rgba(255,255,255,0.05);
-      padding: 1.5rem;
-      border-radius: 1rem;
-      backdrop-filter: blur(10px);
-      transition: 0.3s;
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.6;
+      animation: float 10s ease-in-out infinite alternate;
+      z-index: 0;
     }
+    .orb.blue { width: 400px; height: 400px; top: -50px; left: -100px; background: rgba(14,165,255,0.4); }
+    .orb.gold { width: 300px; height: 300px; bottom: -80px; right: -60px; background: rgba(250,204,21,0.2); }
 
-    .project-card:hover {
-      background: rgba(14,165,255,0.1);
-    }
-
-    .project-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: #0ea5ff; }
-    .project-card p { color: #ccc; font-size: 0.95rem; margin-bottom: 0.5rem; }
-    .project-card span { font-size: 0.8rem; color: #aaa; }
+    .hero-content { position: relative; z-index: 2; }
 
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
-      color: #666;
-      background: rgba(0,0,0,0.2);
+      color: #888;
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(255,255,255,0.05);
     }
 
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(20px, -30px) scale(1.05); }
+      100% { transform: translate(0, 0) scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.4rem; }
+      .hero p { font-size: 1.1rem; }
+    }
   </style>
 </head>
 <body>
-
   <header>
     <a href="index.html" class="logo">WebMoses</a>
     <nav>
       <a href="founders.html">Founders</a>
-      <a href="#projects">Projects</a>
       <a href="mailto:webmoseslabs@gmail.com">Contact</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Web3 for creators</h1>
-    <h2>Build. Create. Earn.</h2>
-    <p>WebMoses tokenizes creative projects so contributors earn ETH or project tokens for completed work. Launch ideas. Reward results.</p>
-    <a href="founders.html" class="btn">Join the DAO</a>
-  </section>
-
-  <section id="projects">
-    <h2>Upcoming Projects</h2>
-    <p>Curated projects coming to WebMoses — tokenized, community-driven, and creator-first.</p>
-    <div class="projects">
-      <div class="project-card">
-        <h3>BirdWhistle.nft</h3>
-        <p>An NFT platform built for artists and musicians — mint, share, and collaborate.</p>
-        <span>NFT • Music • Art — Launching Q2</span>
+  <main>
+    <section class="hero">
+      <div class="orb blue"></div>
+      <div class="orb gold"></div>
+      <div class="hero-content">
+        <h1>Web3 for Creators</h1>
+        <p>Build. Create. Earn. WebMoses tokenizes creative projects so contributors earn ETH or project tokens for completed work. Launch ideas. Reward results.</p>
+        <a href="mailto:webmoseslabs@gmail.com" class="btn">Connect with the Team</a>
       </div>
-      <div class="project-card">
-        <h3>Project Two</h3>
-        <p>Placeholder for your next exciting project description.</p>
-        <span>Web3 • Collaboration — Coming Soon</span>
-      </div>
-      <div class="project-card">
-        <h3>Project Three</h3>
-        <p>Another project for early adopters and contributors.</p>
-        <span>Tokenized • DAO — Coming Soon</span>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 WebMoses — Decentralized Work
   </footer>
-
 </body>
 </html>
