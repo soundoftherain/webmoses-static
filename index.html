@@ -17,11 +17,7 @@
       --card-border: rgba(255,255,255,0.1);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Space Grotesk', Arial, sans-serif;
@@ -42,18 +38,10 @@
       gap: 2rem;
     }
 
-    h1 {
-      font-size: 3rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.25rem;
-      max-width: 600px;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
+    h1 { font-size: 3rem; color: var(--primary); margin-bottom: 1rem; }
+    h2 { font-size: 2rem; color: var(--primary); margin-top: 1rem; margin-bottom: 0.5rem; }
+    h3 { font-size: 1.25rem; color: var(--primary); margin-top: 1rem; margin-bottom: 0.5rem; }
+    p { font-size: 1.1rem; max-width: 700px; line-height: 1.6; margin-bottom: 1rem; }
 
     a.btn {
       display: inline-block;
@@ -64,19 +52,12 @@
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s ease;
+      margin: 0 0.5rem;
     }
 
-    a.btn:hover {
-      background: var(--primary);
-      color: var(--background);
-    }
+    a.btn:hover { background: var(--primary); color: var(--background); }
 
-    .founder {
-      margin-top: 2rem;
-      font-style: italic;
-      color: #cbd5e1;
-      max-width: 500px;
-    }
+    .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
 
     section.card {
       background: var(--card-bg);
@@ -88,26 +69,10 @@
       text-align: left;
     }
 
-    section.card h2, section.card h3 {
-      color: var(--primary);
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
-    }
+    section.card ul { list-style: disc inside; margin-top: 0.5rem; color: #cbd5e1; }
 
-    section.card ul {
-      list-style: disc inside;
-      margin-top: 0.5rem;
-      color: #cbd5e1;
-    }
+    footer { text-align: center; padding: 1rem; color: #94a3b8; font-size: 0.9rem; }
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      color: #94a3b8;
-      font-size: 0.9rem;
-    }
-
-    /* Quick gradient background flair */
     body::before {
       content: '';
       position: fixed;
@@ -119,7 +84,6 @@
       opacity: 0.2;
       z-index: 0;
     }
-
     body::after {
       content: '';
       position: fixed;
@@ -137,36 +101,24 @@
   <main>
     <h1>WebMoses</h1>
     <p>Decentralized work for creators. Tokenized rewards, proof-of-quality, and community governance help contributors earn and scale projects transparently.</p>
-    <a class="btn" href="mailto:hello@webmoses.org">Connect with the Team</a>
 
-    <div class="founder">
-      <p>“I envision a platform where quality work is recognized and rewarded transparently.” — Moses Builder, Founder</p>
+    <div class="btn-group">
+      <a class="btn" href="founders.html">Founders</a>
+      <a class="btn" href="mailto:hello@webmoses.org">Connect with the Team</a>
     </div>
 
     <section class="card">
-      <h2>Mission</h2>
-      <p>Create a decentralized workflow where project stakes, proof-of-work, and proof-of-quality combine to surface top contributors and fairly distribute rewards in ETH or project tokens.</p>
+      <h2>Upcoming Projects</h2>
+      <p>Curated projects coming to WebMoses — tokenized, community-driven, and creator-first.</p>
 
-      <h3>What We Need</h3>
-      <ul>
-        <li>Core contributors: Solidity devs, backend, frontend.</li>
-        <li>Early adopters and pilot projects to test reward flows.</li>
-        <li>Minimal funding to bootstrap audits and infrastructure.</li>
-      </ul>
-
-      <h3>Join</h3>
-      <p>If you’re interested in contributing or investing, connect your wallet and reach out. We’ll onboard early contributors and form the DAO.</p>
-
-      <a class="btn" href="mailto:webmoseslabs@gmail.com" style="margin-top: 1rem; display: inline-block;">Email the team</a>
-    </section>
-
-    <section class="card">
-      <h2>Quick Roadmap</h2>
-      <ul>
-        <li>1. Onboard core contributors and launch pilot projects (2-4 weeks)</li>
-        <li>2. Deploy tokenized project contracts and reward flows (4-8 weeks)</li>
-        <li>3. Audit, iterate, and launch DAO governance (8-16 weeks)</li>
-      </ul>
+      <div class="card">
+        <h3>BirdWhistle.nft</h3>
+        <p>An NFT platform built for artists and musicians — mint, share, and collaborate.</p>
+        <ul>
+          <li>NFT • Music • Art</li>
+          <li>Launching Q2</li>
+        </ul>
+      </div>
     </section>
   </main>
 
