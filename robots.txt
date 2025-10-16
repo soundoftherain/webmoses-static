@@ -1,14 +1,9 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
+
+# Prevent indexing of build artifacts or internal routes
+Disallow: /api/
+Disallow: /_/
+Disallow: /assets/
+
+Sitemap: https://webmoses.org/sitemap.xml
