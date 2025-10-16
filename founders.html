@@ -90,12 +90,12 @@
       margin-top: 2rem;
       box-shadow: 0 0 40px rgba(14,165,255,0.05);
       animation: fadeInUp 1s ease forwards;
+      transition: all 0.3s ease;
     }
 
     .glass-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 0 50px rgba(14,165,255,0.15);
-      transition: all 0.3s ease;
     }
 
     a.btn {
@@ -116,6 +116,24 @@
       box-shadow: 0 0 25px rgba(14,165,255,0.4);
     }
 
+    .donate-btn {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 1.2rem 2.5rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      color: #fff;
+      background: linear-gradient(90deg, #22d3ee, #0ea5ff, #14b8a6);
+      box-shadow: 0 0 30px rgba(14,165,255,0.3);
+      animation: glowPulse 3s infinite ease-in-out;
+    }
+
+    .donate-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 40px rgba(14,165,255,0.6);
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -128,7 +146,6 @@
       z-index: 2;
     }
 
-    /* Background glow orbs */
     .orb {
       position: absolute;
       border-radius: 50%;
@@ -140,7 +157,6 @@
     .orb.blue { width: 400px; height: 400px; top: -60px; left: -120px; background: rgba(14,165,255,0.35); }
     .orb.gold { width: 300px; height: 300px; bottom: -80px; right: -60px; background: rgba(250,204,21,0.2); }
 
-    /* Accent line animation under titles */
     h2::after {
       content: "";
       display: block;
@@ -166,6 +182,11 @@
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 20px rgba(14,165,255,0.3); }
+      50% { box-shadow: 0 0 40px rgba(14,165,255,0.6); }
     }
 
     @media (max-width: 768px) {
@@ -203,10 +224,16 @@
       </ul>
 
       <h3>Join</h3>
-      <p>If you’re interested in contributing or investing, connect your wallet and reach out. We’ll onboard early contributors and form the DAO.</p>
+      <p>If you’re interested in contributing or investing, reach out. Early contributors will help form the DAO and receive project tokens.</p>
 
-      <a href="mailto:webmoseslabs@gmail.com" class="btn">Email the Team</a>
+      <a href="mailto:webmoseslabs@gmail.com" class="btn">Connect with the Team</a>
     </div>
+
+    <section>
+      <h2>Support the Mission</h2>
+      <p style="color:#ccc; max-width:700px;">Your contributions help WebMoses grow the decentralized work movement — supporting audits, open-source development, and early contributors. Every contribution counts.</p>
+      <a href="https://juicebox.money/v5/base:34" target="_blank" rel="noopener" class="donate-btn">💎 Donate ETH on Juicebox</a>
+    </section>
 
     <section>
       <h2>Quick Roadmap</h2>
